@@ -1,0 +1,103 @@
+.contact{
+  background: #000;
+  color: #fff;
+  padding: 30px 100px;
+}
+
+  .top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 20px;
+    border-bottom: 2px solid orange;
+  }
+
+  .top input[type='text'], .top input[type='button']{
+    padding: 8px;
+    background: orange;
+    border-radius: 4px 0 0 4px;
+    border: none;
+    outline:none;
+    color: #fff;
+  }
+
+  .top input::placeholder{
+    color: #fff;
+  }
+
+  .top input[type='button']{
+    background: #fff;
+    color: #000;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .bottom{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px;
+  }
+
+  .heel{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    background: gray;
+    border-radius: 4px;
+  }
+
+  .bottom div{
+    flex: 1;
+  }
+
+  .socials{
+    display: flex;
+    gap: 14px;
+    font-size: 1.2rem;
+  }
+
+  .socials a{
+    color: #fff;
+  }
+
+@media screen and (max-width: 768px) {
+  .top {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+.bottom {
+  flex-wrap: wrap;
+  gap: 60px;
+}
+
+  .bottom > div {
+    width: 50%;
+  }
+
+  .heel {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contact {
+    padding: 15px 15px;
+  }
+
+  .top input[type='text'] {
+    width: 170px;
+  }
+
+  .bottom {
+    padding: 30px 15px;
+    gap: 15px;
+  }
+
+  .bottom h1 {
+    font-size: 1.3rem;
+  }
+}

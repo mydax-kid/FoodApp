@@ -1,0 +1,31 @@
+.flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex h2:nth-child(2){
+  color: orange;
+}
+
+.flex h3{
+  transition: all .3s ease-out;
+}
+
+.card{
+  box-shadow: 3px 3px 9px rgba(0,0,0,0.4);
+  margin: 15px;
+  border-radius: 6px;
+  padding: 15px;
+  max-width: 95%;
+}
+
+.card:hover h3{
+  color: orange;
+}
+
+@media screen and (max-width: 768px) {
+  .card .flex {
+    flex-direction: row;
+  }
+}

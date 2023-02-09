@@ -1,0 +1,146 @@
+.hero-about{
+  height: 50vh;
+  position: relative;
+}
+
+.hero-about::after{
+  content: 'About Us';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.7);
+  color: orange;
+  display: grid;
+  place-items: center;
+  font-size: 3.5rem;
+  font-weight: bold; 
+}
+
+img{
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+}
+
+.info{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 70px;
+  padding: 60px 100px;
+  background: #fff;
+}
+
+.info div{
+  width: 100%;
+}
+
+.info-right{
+  padding: 30px;
+}
+
+.info-right h1{
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.info-right button{
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: orange;
+  color: #fff;
+  outline: none;
+  border: none;
+  margin-top: 13px;
+  transition: all .3s ease-out;
+}
+
+.info-right button:hover{
+  background: orangered;
+}
+
+.choice{
+  text-align: center;
+  padding: 50px 100px;
+}
+
+.choice h1{
+  font-size: 2.5rem;
+}
+
+.choice p{
+  margin: 15px 0;
+  padding: 0 150px;
+}
+
+.img-wrap{
+  height: 300px;
+}
+
+.choice-icons{
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 0 30px 0;
+}
+
+.choice-icons div{
+  width: 100%;
+}
+
+.choice-icons p{
+  padding: 0;
+}
+
+.choice-icons h1{
+  font-size: 1.6rem;
+}
+
+.icon{
+  font-size: 4rem;
+}
+
+@media screen and (max-width: 768px) {
+  .info {
+    flex-direction: column;
+    padding: 50px 50px;
+    gap: 15px;
+  }
+
+  .choice {
+    padding: 50px;
+  }
+
+  .choice-icons {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .choice p{
+  padding: 10px 50px;
+}
+}
+
+@media screen and (max-width: 480px) {
+  .info {
+    padding: 30px 10px;
+  }
+
+  .info-right h1{
+    font-size: 1.4rem;
+  }
+
+  .info-right {
+    padding: 30px 5px;
+  }
+
+    .choice {
+      padding: 30px 5px;
+    }
+
+  .choice p{
+  padding: 10px 5px;
+}
+}
