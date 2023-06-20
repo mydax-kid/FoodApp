@@ -23,61 +23,55 @@ const Shop = ({shopList, setShopList, handleCart, handleWishList}) => {
 
   //DROPDOWN CHANGE EVENT HANDLER
   const handleChange = (e) => {
-    // setSelectVal(e.target.options[e.target.selectedIndex].value)
-    setSelectVal(e.target.value)
+    // const val = e.target.options[e.target.selectedIndex].value
+    const val = e.target.value
+    setSelectVal(val)
 
-    if (selectVal === 'ratings'){
-      let newList = shopList.sort((a,b) => {
-      return b.rating - a.rating;
-      })
-      setOurList([...newList])
-    }
-    else if (selectVal === 'highPrices'){
-      let newList = shopList.sort((a,b) => {
-      return b.price - a.price;
-      })
-      setOurList([...newList])
-    }
-    else if (selectVal === 'lowPrices') {
-      let newList = shopList.sort((a,b) => {
-      return a.price - b.price;
-      })
-      setOurList([...newList])
-    }
-    else {
-      setOurList([...shopList])
-    }
+    if (val === 'ratings') {
+        const newList = shopList.sort((a, b) => b.rating - a.rating);
+        setOurList([...newList]);
+      } else if (val === 'highPrices') {
+        const newList = shopList.sort((a, b) => b.price - a.price);
+        setOurList([...newList]);
+      } else if (val === 'lowPrices') {
+        const newList = shopList.sort((a, b) => a.price - b.price);
+        setOurList([...newList]);
+      } else {
+        setOurList([...shopList]);
+      }
   }
 
   
   //INPUT CHANGE EVENT HANDLER
   const handleInput = (e) => {
-    setInputValue(e.target.value.toLowerCase())
+    const val = e.target.value.toLowerCase()
+    setInputValue(val)
     
-    // if (inputValue) {
-    //   let newList = shopList.filter(item => {
-    //     let name = item.name.toLowerCase()
-    //     return name.indexOf(inputValue) != -1 ;
-    //   })
-    //   setOurList([...newList])
-    // } else {
-    //   setOurList([...shopList])
-    // }
-    let newList = shopList.filter(item => {
-          if (!inputValue) return true
-          if (item.name.toLowerCase().includes(inputValue)) {
-            return true
-          }
-        })
-    setOurList([...newList])
+    if (val) {
+      let newList = shopList.filter(item => {
+        let name = item.name.toLowerCase()
+        return name.indexOf(val) != -1 ;
+      })
+      setOurList([...newList])
+    } else {
+      setOurList([...shopList])
+    }
+    // let newList = shopList.filter(item => {
+    //       if (!inputValue) return true
+    //       if (item.name.toLowerCase().includes(inputValue)) {
+    //         return true
+    //       }
+    //     })
+    // setOurList([...newList])
   }
 
   //RANGE CHANGE EVENT HANDLER
   const rangeInput = (e) => {
-    setRangeValue(e.target.value)
+    const val = e.target.value
+    setRangeValue(val)
 
     let newList = shopList.filter(item => {
-      return item.price > rangeValue ;
+      return item.price >= val ;
     })
     setOurList([...newList])
   }
